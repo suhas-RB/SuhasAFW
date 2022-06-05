@@ -29,7 +29,7 @@ class EmployeeEntitlementsPage:
     def verifyentitlementspage(self,wait):
 
         try:
-            wait.until(expected_conditions.visibility_of_element_located(*self.__ent_page))
+            wait.until(expected_conditions.visibility_of_element_located(self.__ent_page))
             print("Entitlements page is displayed")
             return True
 
