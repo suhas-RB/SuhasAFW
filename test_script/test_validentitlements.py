@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium.webdriver import ActionChains
 
@@ -45,12 +47,20 @@ class Test_B(Base_Setup):
 
                 #Type Employee Name
                 entitlementspage.employeename(empname)
+                time.sleep(5)
 
                 #select period
                 entitlementspage.leaveperiod(period)
+                time.sleep(5)
+
 
                 #click search
                 entitlementspage.clicksearch()
+                time.sleep(10)
+
+                #verify search details
+                entitlementspage.verifysearch()
+
 
             else:
                 print("Entitlements page is not displayed")

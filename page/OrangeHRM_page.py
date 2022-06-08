@@ -8,6 +8,8 @@ class OrangeHRMPage:
         __leave_button=(By.XPATH,"//b[.='Leave']")
         __ent_button=(By.XPATH,"//a[.='Entitlements']")
         __employeeent_button = (By.XPATH, "//a[.='Employee Entitlements']")
+        __recruitment_button=(By.XPATH,"//b[.='Recruitment']")
+        __vacancies_button=(By.XPATH,"//a[.='Vacancies']")
 
         def __init__(self,driver):
             self.driver=driver
@@ -27,3 +29,8 @@ class OrangeHRMPage:
             action.move_to_element(self.driver.find_element(*self.__leave_button)).perform()
             action.move_to_element(self.driver.find_element(*self.__ent_button)).perform()
             self.driver.find_element(*self.__employeeent_button).click()
+
+
+        def clickvacanciespage(self,action):
+            action.move_to_element(self.driver.find_element(*self.__recruitment_button)).perform()
+            self.driver.find_element(*self.__vacancies_button).click()
