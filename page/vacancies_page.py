@@ -9,6 +9,7 @@ class VacanciesPage:
     __vacancy=(By.ID,"vacancySearch_jobVacancy")
     __hiringmanager=(By.ID,"vacancySearch_hiringManager")
     __search_button=(By.ID,"btnSrch")
+    __search_results=(By.XPATH,"//td[.='No Records Found']")
 
     def __init__(self,driver):
         self.driver=driver
@@ -38,4 +39,15 @@ class VacanciesPage:
         sel = Select(self.driver.find_element(*self.__hiringmanager))
         sel.select_by_visible_text(hiringmanager)
 
+    def clicksearch(self):
+        self.driver.find_element(*self.__search_button).click()
 
+
+    def vacancies_verifyrecords(self):
+        try:
+            self.driver.find_element(*self.__search_results)
+            print("No vacancies found for the selected match")
+
+
+        except:
+            print("vacancies found for the selected match")

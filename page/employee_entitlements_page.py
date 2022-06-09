@@ -45,9 +45,9 @@ class EmployeeEntitlementsPage:
         try:
 
             self.driver.find_element(*self.__verify_search)
-            print("No records found")
+            print("No leave entitlements found for the given match")
 
 
         except:
-            print("Some records found")
+            print("leave entitlements found for the given match")
 
